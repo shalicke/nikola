@@ -47,7 +47,7 @@ SAMPLE_CONF = {
     'BLOG_EMAIL': "joe@demo.site",
     'BLOG_DESCRIPTION': "This is a demo site for Nikola.",
     'DEFAULT_LANG': "en",
-    'THEME': 'bootstrap3',
+    'THEME': 'bootstrap',
     'COMMENT_SYSTEM': 'disqus',
     'COMMENT_SYSTEM_ID': 'nikolademo',
     'TRANSLATIONS_PATTERN': DEFAULT_TRANSLATIONS_PATTERN,

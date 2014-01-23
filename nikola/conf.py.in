@@ -311,6 +311,8 @@ COMPILERS = ${COMPILERS}
                              # the main (the newest) index page (index.html)
 
 # Name of the theme to use.
+# WARNING: With this Nikola package, the bootstrap3 theme must be installed
+#          separately. In order to do this, use: nikola install_bs3
 THEME = ${THEME}
 
 # Color scheme to be used for code blocks. If your theme provides
