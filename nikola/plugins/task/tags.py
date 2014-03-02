@@ -65,7 +65,7 @@ class RenderTags(Task):
             self.site.config['INDEX_DISPLAY_POST_COUNT'],
             "index_teasers": self.site.config['INDEX_TEASERS'],
             "rss_teasers": self.site.config["RSS_TEASERS"],
-            "hide_untranslated_posts": self.site.config['HIDE_UNTRANSLATED_POSTS'],
+            "show_untranslated_posts": self.site.config['SHOW_UNTRANSLATED_POSTS'],
             "feed_length": self.site.config['FEED_LENGTH'],
         }
 
@@ -85,10 +85,10 @@ class RenderTags(Task):
             post_list.sort(key=lambda a: a.date)
             post_list.reverse()
             for lang in kw["translations"]:
-                if kw["hide_untranslated_posts"]:
-                    filtered_posts = [x for x in post_list if x.is_translation_available(lang)]
-                else:
+                if kw["show_untranslated_posts"]:
                     filtered_posts = post_list
+                else:
+                    filtered_posts = [x for x in post_list if x.is_translation_available(lang)]
                 rss_post_list = [p.source_path for p in filtered_posts]
                 yield self.tag_rss(tag, lang, rss_post_list, kw, is_category)
                 # Render HTML
